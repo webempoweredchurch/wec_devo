@@ -124,7 +124,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 	var $curVerses;		// current verses for scripture content (usually H5)
 
 	var $forumVars;		// keep track of forum GET/POST vars
-	
+
 	var $headerData;	// include data for CSS / JS in header
 
 	// for rtehtmlarea in Front-end
@@ -147,9 +147,9 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 	);
 	var $thisConfig = array();
 	var $RTEtypeVal = 'text';
-	
+
 	var $isRSSFeed = false;
-	
+
 	/**
 	* Init: Initialize the extension. read in Flexform/Typoscript/getvars.
 	*
@@ -189,10 +189,10 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 				  <script type="text/javascript" src="'.$bghtmlareaPath.'res/lang/en.js"></script>
 				  <script type="text/javascript" src="'.$bghtmlareaPath.'res/dialog.js"></script>
 				';
-				
+
 		} else {
 			$this->RTEObj = 0;
-		}	
+		}
 		// Set the storage PID (currently supports one page...could add recursive or multiple pages later)
 		//-------------------------------------------------------------
 		$this->config['storagePID'] 		= $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'storagePID', 'sDEF');
@@ -205,7 +205,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 
 		// set the current page id
 		$this->id = $GLOBALS['TSFE']->id;
-		
+
 		// ----------------------------------------------------------------------------------------
 		//	Set USER Info
 		// ----------------------------------------------------------------------------------------
@@ -299,7 +299,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			$this->curTextPaging = $this->forceTextPaging;
 		if ($this->forceTextSize)
 			$this->curTextSize = $this->forceTextSize;
-			
+
 		// SET if administrator
 		//---------------------------------------------------
 		if ($this->userID && ($admins = $this->config['administrator_list'])) {
@@ -339,7 +339,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			if ($GLOBALS["TSFE"]->type == 224) {  // RSS FEED
 				$this->isRSSFeed = true;
 			}
-			// allow RSS feed to be "discovered" by feed readers			
+			// allow RSS feed to be "discovered" by feed readers
 			else if ($rssLink = $this->conf['xml.']['rss.']['link']) {
 				if (strpos($rssLink,'http:') === FALSE) {
 					$urlParam['type'] = 224;
@@ -353,7 +353,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 				$GLOBALS['TSFE']->additionalHeaderData['tx_wecdevo'] = '<link rel="alternate" type="application/rss+xml" title="'.$rssTitle.'" href="'.$rssURL.'" />';
 			}
 		}
-				
+
 		// ------------------------------------------------------------
 		// Check INCOMING POST Vars
 		// ------------------------------------------------------------
@@ -385,7 +385,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			$saveJournalData = t3lib_div::_GP('journal_entry') ? t3lib_div::_GP('journal_entry') : $this->postvars['journal_entry'];
 			$this->saveJournal($this->postvars['journal_date'], $saveJournalData);
 			$this->curDay = $this->postvars['show_date'];
-			$this->curSec = $this->postvars['section'];			
+			$this->curSec = $this->postvars['section'];
 		}
 
 		//
@@ -414,7 +414,15 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 					$this->forumVars[$fvKey] = $fvVal; //htmlspecialchars($fvVal);
 				}
 		}
-		
+
+		// ADMIN
+
+		if (t3lib_div::_GP('show_admin') && $this->isAdministrator) {
+		    $admin_content = $this->show_admin();
+		    print $admin_content;
+		    exit(1);
+		}
+
 	}
 
 	/**
@@ -426,14 +434,14 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 	*/
 	function main($content,$conf) {
 	   	$this->init($conf);
-	   	if ($conf['isLoaded'] != 'yes') 
+	   	if ($conf['isLoaded'] != 'yes')
 	      return $this->pi_getLL('errorIncludeStatic');
-	
+
 		// if RSS Feed, then just show that
 		if ($this->isRSSFeed) {
 			return $this->displayRSSFeed();
 		}
-		
+
  		// LOAD TEMPLATE FILE
 		//-------------------------
 		$templateCode = $this->cObj->fileResource($this->conf['templateFile']);
@@ -461,17 +469,17 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 		if (!strstr($thisTemplate, '###TEXTSIZE_ICONS###')) { // if no text size in template => set default
 			if (!$this->forceTextSize) $this->curTextSize = 2;
 		}
-		
+
 		// handle if no journal, then do not display rightCol
 		if (!$this->config['hasJournal']) {
 			$this->marker['###JOURNAL_RIGHTCOL_CSS###'] = ' hideCol';
 		}
 		else {
-			$thisTemplate = $this->cObj->substituteSubpart($thisTemplate, '###SHOW_ICONBAR###', ''); 
+			$thisTemplate = $this->cObj->substituteSubpart($thisTemplate, '###SHOW_ICONBAR###', '');
 		}
-		
+
 		// add RSS feed icon
-		$this->marker = $this->addSubscribeRSSFeed($this->marker);		
+		$this->marker = $this->addSubscribeRSSFeed($this->marker);
 
 		// Generate main content
 		//----------------------
@@ -559,9 +567,9 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 //		if (is_array($this->conf['general_stdWrap.'])) {
 //			$content = $this->cObj->stdWrap($content, $this->conf['general_stdWrap.']);
 //		}
-		
+
 		$GLOBALS['TSFE']->additionalHeaderData['tx_wecdevo'] .= $this->headerData;
-		
+
 		return $this->pi_wrapInBaseClass($content);
 	}
 
@@ -793,7 +801,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 							'pidInList' => $gotoPageID,
 							'orderBy' => 'sorting',
 							'where' => 'CType != "'.$extKey.'_pi1 "'.$this->cObj->enableFields('tt_content'), // Avoid any loop
-							'languageField' => 'sys_language_uid' 
+							'languageField' => 'sys_language_uid'
 						)
 					);
 					$mainContent = $this->cObj->CONTENT($query);
@@ -818,6 +826,9 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 				$this->marker['###APPLICATION###'] = $row['application'];
 				$this->marker['###END_CONTENT###'] = $row['end_content'];
 
+                if ($this->isAdministrator) {
+                    $this->marker['###ADMIN###'] = '<a href="'.$this->getAbsoluteUrl($GLOBALS['TSFE']->id).'?show_admin=1">Admin</a>';
+                }
 				$nextArrowContent = '';
 				if ($this->config['useNextArrow'] && $this->nextInSequence) {
 					$nextSequenceURL = $this->getUrl($GLOBALS['TSFE']->id, $this->curDay, $this->nextInSequence, $paramArray);
@@ -1249,7 +1260,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			$curTopicStr = strtoupper($curTopicStr); // make all uppercase
 //			$curTopicStr = ereg_replace('[^A-Za-z0-9_,]', '', $curTopicStr); // make  only alphanumeric for filename
 			$curTopicStr = preg_replace('/[^A-Za-z0-9_,]/', '', $curTopicStr); // make  only alphanumeric for filename
-			
+
 		}
 		else
 			$curTopicStr = '';
@@ -1635,7 +1646,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 				if (gotoURL.indexOf(\'?\') > 0) { gotoURL += \'&\'; } else { gotoURL += \'?\'; }
 				gotoURL += "tx_wecdevo[show_date]="+mStr+dStr+yStr;
 				location.href = gotoURL;
-			}			
+			}
 			</script>
 			';
 
@@ -1878,18 +1889,18 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 						nextArrow  = document.getElementById("next_arrow").getElementsByTagName("a");
 				}
 
-				if (interfList) 
+				if (interfList)
 				{
 					for (var i=0; i < interfList.length; i++)
 					{
 						interfList[i].onclick = new Function (\'checkIfShouldSave("Do you want to save your journal first?")\');
 					}
 				}
-				if (nextArrow) 
+				if (nextArrow)
 				{
 					nextArrow[0].onclick = new Function (\'checkIfShouldSave("Do you want to save your journal first?")\');
 				}
-				
+
 				var appVer = navigator.appVersion.toLowerCase();
 				var iePos  = appVer.indexOf(\'msie\');
 				if (iePos == -1) // only do this for non-IE browsers
@@ -1898,11 +1909,11 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 						prevJournalText = "<br />\n";
 					else
 						prevJournalText = "\n"+prevJournalText;	// add a break because HTMLarea adds one
-				}				
+				}
 		 	//]]>
 			</script>
 		';
-		
+
 		// Now handle if other RTE is used...
 		// Add Front-End htmlArea editing
 		if(is_object($this->RTEObj) && $this->RTEObj->isAvailable()) {
@@ -1933,7 +1944,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			// MAIN TEXTAREA
 			$jsContent .= $RTEitem;
 			$jsEndForm = '</form>';
-			
+
 			// POST FORM
 			$jsRTEContent = '
 				<script type="text/javascript">'. implode(chr(10), $this->additionalJS_post).'
@@ -1967,7 +1978,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 
 			// show Editor with any previous user data
 			$jsContent .= '<textarea name="tx_wecdevo[journal_entry]" id="journal_entry" cols="35" rows="14" wrap="VIRTUAL" style="font-size:11px;width:275px;height:330px;">'.$entryStr.'</textarea>';
-			
+
 			// JavaScript to convert TextArea to BG_HTMLAREA RTE
 			$jsRTEContent  =
 			'<script type="text/javascript"  defer="1">
@@ -1980,7 +1991,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 				useJournalRTE = !isOpera && (!isMac || (isMac && isFF));
 				if (useJournalRTE &&  (typeof(HTMLArea) === "undefined")) {
 					useJournalRTE = false;
-				}	
+				}
 				if (useJournalRTE) {
 					config  = new HTMLArea.Config();
 				}
@@ -2033,7 +2044,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 
 		// Build the Journal Content
 		$journalContent = $jsContent . $jsButtonContent . $jsEndForm . $jsRTEContent . $jsJournalChanged;
-		
+
 		return $journalContent;
 	}
 
@@ -2061,14 +2072,14 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 		$where = "post_date='".$saveDate."' AND owner_userid=".intval($this->userID).' AND pid IN('.$this->pid_list.') AND deleted=0';
 		$orderBy = '';
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', $this->devoJournalTable, $where, '', $orderBy, '');
-		
+
 		if (mysql_error()) t3lib_div::debug(array(mysql_error(),$query));
 
 		$theText = htmlspecialchars($theText);
 		$theText = $this->simpleEncrypt($theText, "JesusLovesYou");
 		$count = $GLOBALS['TYPO3_DB']->sql_num_rows($res);
 		$pidlist = t3lib_div::trimExplode(',',$this->pid_list);
-		$saveToPID = $pidlist[0]; 
+		$saveToPID = $pidlist[0];
 		if ($count <= 0) { // no entry exists so INSERT...
 			$query = 'INSERT INTO '.$this->devoJournalTable." SET post_date='".$saveDate."', owner_userid=".$this->userID.", entry='".addslashes($theText)."', pid=".$saveToPID.', crdate='.mktime().', tstamp='.mktime();
 		}
@@ -2096,7 +2107,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 
 		$loadDate = date('Y-m-d', mktime(12, 0, 0, substr($theDate, 0, 2), substr($theDate, 2, 2), substr($theDate, 4, 2)));
 		$pidlist = t3lib_div::trimExplode(',',$this->pid_list);
-		$saveToPID = $pidlist[0];		
+		$saveToPID = $pidlist[0];
 //		$query = 'SELECT * FROM '.$this->devoJournalTable." WHERE post_date='".$loadDate."' AND owner_userid=".intval($this->userID).' AND pid='.$saveToPID.' AND deleted=0 ';
 //		$res = $GLOBALS['TYPO3_DB']->sql(TYPO3_db, $query);
 		$where = "post_date='".$loadDate."' AND owner_userid=".intval($this->userID).' AND pid='.$saveToPID.' AND deleted=0';
@@ -2346,7 +2357,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 		$lang = ($l = $GLOBALS['TSFE']->sys_language_uid) ? $l : '0,-1';
 		$limit = $this->config['num_previewRSS_items'] ? $this->config['num_previewRSS_items'] : 5;
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', $this->devoContentTable, $where, '', $order_by, $limit);
-		if (mysql_error()) 
+		if (mysql_error())
 			t3lib_div::debug(array(mysql_error(), 'SELECT * FROM '.$this->devoContentTable.' WHERE '.$where.' ORDER BY '.$order_by.' LIMIT '.$limit));
 
 		// Grab Section Names
@@ -2357,11 +2368,11 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 		while ($row_section = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2)) {
 			$sectionList[$row_section['uid']] = $row_section['name'];
 		}
-		
+
 		// fill in item
 		$item_content = "";
 		$mostRecentMsgDate = 0;
-	
+
 		while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
 			// Generate Title From Section + Date
 			$titleStr = $sectionList[$row['section']] . $this->pi_getLL('rssfeed_for', ' for ') . date('M d, Y',$row['starttime']);
@@ -2383,7 +2394,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			if (($absRefPrefix = $GLOBALS['TSFE']->config['config']['absRefPrefix']) && ($RTEImageStorageDir = $GLOBALS['TYPO3_CONF_VARS']['BE']['RTE_imageStorageDir'])) {
 				$msgText = str_replace('"' .$RTEImageStorageDir, '"' . $absRefPrefix . $RTEImageStorageDir, $msgText);
 			}
-			// fill in item markers			
+			// fill in item markers
 			$itemMarker['###ITEM_DESCRIPTION###'] = '<description>' . htmlspecialchars(stripslashes($msgText)) . '</description>';
 			if ($row['email'])
 				$itemMarker['###ITEM_AUTHOR###'] = '<author>' . htmlspecialchars(stripslashes($row['email'])) . ' ('.htmlspecialchars(stripslashes($row['name'])).')</author>';
@@ -2452,6 +2463,48 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 	}
 
 	/**
+	 * =====================================================================================
+	 * SHOW_ADMIN
+	 *
+	 * Administrative features: view stats
+	 *
+	 * =====================================================================================
+	 */
+	 function show_admin()
+	 {
+	    // view stats
+        $adminContent = "<div style='border:2px solid #888;padding:10px 10%;width:300px;margin:0px auto;'>";
+        $adminContent .= "<div style='font-size:16px;font-weight:bold;margin-bottom:20px;'>WEC-DEVO STATISTICS</div>";
+
+        // grab # journal entries
+        $query = "SELECT * FROM ".$this->devoJournalTable." WHERE pid IN(".$this->pid_list.")";
+        $res = $GLOBALS['TYPO3_DB']->sql(TYPO3_db, $query);
+        if (mysql_error())	t3lib_div::debug(array(mysql_error(),$query));
+        $adminContent .= "Total Journal Entries = ". $GLOBALS['TYPO3_DB']->sql_num_rows($res);
+
+        // grab active users (last 30 days)
+        $query = "SELECT * FROM ".$this->devoJournalTable." WHERE crdate>=".mktime(12,0,0,date("m"),date("d")-30,date("y"))." AND pid IN(".$this->pid_list.") ORDER BY crdate";
+        $res = $GLOBALS['TYPO3_DB']->sql(TYPO3_db, $query);
+        if (mysql_error())	t3lib_div::debug(array(mysql_error(),$query));
+        $adminContent .= "<br>Journal Entries in last 30 days = ". $GLOBALS['TYPO3_DB']->sql_num_rows($res);
+
+
+        // grab # journal users
+        $query = "SELECT DISTINCT owner_userid FROM ".$this->devoJournalTable." WHERE pid IN(".$this->pid_list.")";
+        $res = $GLOBALS['TYPO3_DB']->sql(TYPO3_db, $query);
+        if (mysql_error())	t3lib_div::debug(array(mysql_error(),$query));
+        $adminContent .= "<br><br>Total Journal Users = ". $GLOBALS['TYPO3_DB']->sql_num_rows($res);
+
+        $adminContent .= '<div style="margin:0px auto;text-align:center;margin:20px 0"><a href="javascript:history.back();">Go Back</a></div>';
+
+        $adminContent .= "</div><br>";
+
+
+        return $adminContent;
+
+     }
+
+	/**
 	* Getting the URL to the given ID with all needed params
 	* This will add extras, if they are set or allow to set "special" ones
 	*
@@ -2506,7 +2559,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			if (strpos($pageURL,"http") === FALSE) {
 				$absURL =  $hostURL . $pageURL;
 			}
-			else { 
+			else {
 				$absURL = $pageURL;
 			}
 		}
@@ -2515,7 +2568,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 			$absURL = $pageURL;
 		}
 
-		
+
 		//convert any ampersands
 		$absURL = str_replace('&','&amp;', $absURL);
 		return $absURL;
@@ -2634,7 +2687,7 @@ class tx_wecdevo_pi1 extends tslib_pibase {
 
 			//	Return value if found, otherwise default
 		return $retVal ? $retVal : $default;
-	}	
+	}
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/wec_devo/pi/class.tx_wecdevo_pi1.php']) {
