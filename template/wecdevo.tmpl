@@ -1,0 +1,289 @@
+<!-- WEC_DEVO TEMPLATE OVERVIEW
+*******************************************************************************
+	BASE TEMPLATES:
+		1) ###TEMPLATE_DEFAULT 	 -- has all content, journal
+		2) ###TEMPLATE_SCRIPTURE -- has scripture content only, journal
+		3) ###TEMPLATE_NOJOURNAL -- has all content, but no journal
+		4) ###TEMPLATE_INFO		 -- has only main content, and no journal
+
+	TEMPLATE ID DESCRIPTIONS
+		The following are the template IDs that you can add to the template. You should only remove an element
+		if you do not want that element displayed at all. If it is a content element and is blank, then nothing
+		will be displayed.
+
+		###SECTION_INTERFACE	-- the horizontal interface that shows the sections (must have sections created)
+		###JOURNAL				-- the journal (must be turned on)
+		###SELECT_TOPIC 		-- the dropdown menu to select topics (must have topics created)
+
+		###MAIN_CONTENT 		-- the following are based on if the content is filled in the record field
+		###SCRIPTURE			-- (you can leave these in and if they are blank then they will be empty)
+		###QUESTIONS
+		###APPLICATION
+		###PRAYER
+		###END_CONTENT
+		###CONTENT_CLASS		-- the CSS class for content. This allows Large/Normal/Small font sizes
+
+		###HEADER				-- a header graphic or element (type=HEADER)
+		###COMMENTS				-- a comment system (type=COMMENT)
+		###DISCUSSION_PREVIEW 	-- a preview of discussion system (type=DISCUSSION_PREVIEW)
+
+		###DATE					-- the current date (ie. August 12, 2005)
+		###TODAY				-- a text link that says "today" that will take you to the current date
+		###DAILY_CALENDAR		-- a calendar showing each day of the current week (ie. < S M T W Th F S >)
+		###WEEK_CALENDAR		-- a weekly calendar allowing you to go to different weeks (ie. < Week of July 1-7,2005)
+
+   	  	###TEXTPAGING_ICONS		-- the icons for text paging (Full / 1-2-3 / Scrollbox)
+	    ###TEXTSIZE_ICONS		-- the icons for font sizing (Large / Normal / Small)
+		###AUDIO_LINK			-- graphic or text link (defined in Flexform) IF there is audio
+		###VIDEO_LINK			-- graphic or text link (defined in Flexform) IF there is video
+
+-->
+
+<!-- ###TEMPLATE_DEFAULT### begin
+===============================================================================
+	This is the default template for the Devo
+-->
+<table class="tx-wecdevo-contentBox" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="bottom">###HEADER###</td>
+  </tr>
+  <tr>
+  	<td>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr><td valign="top">
+	      		###SECTION_INTERFACE###
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td valign="top" class="tx-wecdevo-leftCol ###JOURNAL_LEFTCOL_CSS###">
+    		<div class="tx-wecdevo-featureBar">
+	    		###AUDIO_LINK### ###VIDEO_LINK### ###DATE### ###TODAY### ###DAILY_CALENDAR### ###MONTHLY_CALENDAR###
+				<!-- ###SHOW_ICONBAR### begin -->
+				<div class="tx-wecdevo-iconBar">
+					###TEXTPAGING_ICONS###
+					###TEXTSIZE_ICONS###
+					###RSSFEED_ICON1###
+				</div>
+				<!-- ###SHOW_ICONBAR### end -->
+    		</div>
+
+    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+	    		###SCRIPTURE_REF###
+	    		###SCRIPTURE###
+	    		###APPLICATION###
+	    		###PRAYER###
+	    		###END_CONTENT###
+	    		###NEXT_ARROW###
+    		</div>
+          </td>
+          <td align="left" valign="top" class="tx-wecdevo-rightCol ###JOURNAL_RIGHTCOL_CSS###">
+          	  <!-- ###SHOW_ICONBOX### begin -->
+          	   <div class="tx-wecdevo-iconBoxHolder"> 
+	          	  ###TEXTPAGING_ICONS###
+    	      	  ###TEXTSIZE_ICONS###
+          	  </div>
+			  <div style="clear:both;"> </div>
+          	  <!-- ###SHOW_ICONBOX### end -->
+          	  <div class="###CONTENT_CLASS###">
+				  <div>###JOURNAL###</div>
+	              <div>
+		              ###QUESTIONS###
+		              ###SELECT_TOPIC###
+		 			  ###COMMENTS###
+		 			  ###DISCUSSION_PREVIEW###
+	              </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_DEFAULT### end-->
+
+<!-- ###TEMPLATE_SCRIPTURE### begin
+===============================================================================
+	This template for the Devo shows Scripture only
+-->
+<table class="tx-wecdevo-contentBox" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="bottom">###HEADER###</td>
+  </tr>
+  <tr>
+  	<td>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr><td valign="top">
+				###SECTION_INTERFACE###
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td valign="top" class="tx-wecdevo-leftCol">
+    		<div class="tx-wecdevo-featureBar">
+	    		###AUDIO_LINK### ###VIDEO_LINK### ###DATE### ###TODAY### ###DAILY_CALENDAR### ###MONTHLY_CALENDAR###
+				<!-- ###SHOW_ICONBAR### begin -->
+				<div class="tx-wecdevo-iconBar">
+					###TEXTPAGING_ICONS###
+					###TEXTSIZE_ICONS###
+					###RSSFEED_ICON1###
+				</div>
+				<!-- ###SHOW_ICONBAR### end -->	
+    		</div>
+    		<div class="###CONTENT_CLASS###">
+	    		###SCRIPTURE_REF###
+    			###SCRIPTURE###
+	    		###NEXT_ARROW###
+    		</div>
+          </td>
+          <td align="left" valign="top" class="tx-wecdevo-rightCol ###JOURNAL_RIGHTCOL_CSS###">
+              <!-- ###SHOW_ICONBOX### begin -->
+          	  <div class="tx-wecdevo-iconBoxHolder"> 
+	          	  ###TEXTPAGING_ICONS###
+    	      	  ###TEXTSIZE_ICONS###
+          	  </div>
+			  <div style="clear:both;"> </div>
+          	  <!-- ###SHOW_ICONBOX### end -->
+        	  <div class="###CONTENT_CLASS###">
+        	  	 <!-- ###SHOW_JOURNAL### begin -->
+				  <div>###JOURNAL###</div>	
+        	      <!-- ###SHOW_JOURNAL### end -->
+	              <div>
+		              ###QUESTIONS###
+		              ###SELECT_TOPIC###
+		 			  ###COMMENTS###
+		 			  ###DISCUSSION_PREVIEW###
+	              </div>
+        	  </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_SCRIPTURE### end-->
+
+<!-- ###TEMPLATE_NOJOURNAL### begin
+===============================================================================
+	This is the no-journal template for the Devo
+-->
+<table class="tx-wecdevo-contentBox" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="bottom">###HEADER###</td>
+  </tr>
+  <tr>
+  	<td>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr><td valign="top">
+	      		###SECTION_INTERFACE###
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td valign="top" class="tx-wecdevo-leftCol">
+    		<div class="tx-wecdevo-featureBar">
+	    		###DATE### ###TODAY### ###DAILY_CALENDAR### ###MONTHLY_CALENDAR###
+				<!-- ###SHOW_ICONBAR### begin -->
+				<div class="tx-wecdevo-iconBar">
+					###TEXTPAGING_ICONS###
+					###TEXTSIZE_ICONS###
+					###RSSFEED_ICON1###					
+				</div>
+				<!-- ###SHOW_ICONBAR### end -->	
+    		</div>
+    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+	    		###SCRIPTURE_REF###
+	    		###SCRIPTURE###
+	    		###APPLICATION###
+	    		###PRAYER###
+	    		###END_CONTENT###
+	    		###NEXT_ARROW###
+    		</div>
+          </td>
+          <td align="left" valign="top" class="tx-wecdevo-rightCol ###JOURNAL_RIGHTCOL_CSS###">
+            <!-- ###SHOW_ICONBOX### begin -->
+            <div class="tx-wecdevo-iconBoxHolder"> 
+	       	  ###TEXTPAGING_ICONS###
+    	   	  ###TEXTSIZE_ICONS###
+            </div>
+			<div style="clear:both;"> </div>
+            <!-- ###SHOW_ICONBOX### end -->
+      	    <div class="###CONTENT_CLASS###">
+              <div>
+	              ###SELECT_TOPIC###
+	 			  ###COMMENTS###
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_NOJOURNAL### end-->
+
+<!-- ###TEMPLATE_INFO### begin
+===============================================================================
+	This is the info template for the Devo (just main content)
+-->
+<table class="tx-wecdevo-contentBox" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="bottom">###HEADER###</td>
+  </tr>
+  <tr>
+  	<td>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr><td valign="top">
+	      		###SECTION_INTERFACE###
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td valign="top" class="tx-wecdevo-leftCol">
+    		  <div class="tx-wecdevo-featureBar">
+				<!-- ###SHOW_ICONBAR### begin -->
+				<div class="tx-wecdevo-iconBar">
+					###TEXTPAGING_ICONS###
+					###TEXTSIZE_ICONS###
+					###RSSFEED_ICON1###					
+				</div>
+				<!-- ###SHOW_ICONBAR### end -->	
+    		  </div>	
+			  <div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+	    		###NEXT_ARROW###
+	    	  </div>
+          </td>
+          <td align="left" valign="top" class="tx-wecdevo-rightCol ###JOURNAL_RIGHTCOL_CSS###">
+          	  <!-- ###SHOW_ICONBOX### begin -->
+         	  <div class="tx-wecdevo-iconBoxHolder"> 
+	          	  ###TEXTPAGING_ICONS###
+    	      	  ###TEXTSIZE_ICONS###
+          	  </div>
+			  <div style="clear:both;"> </div>
+          	  <!-- ###SHOW_ICONBOX### end -->
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_INFO### end-->

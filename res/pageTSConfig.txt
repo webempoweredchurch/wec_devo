@@ -1,0 +1,13 @@
+# ***************************************************************************************
+# Sets default Page TSConfig for RTE so content,scripture,questions and prayer are editable
+# (without this, you lose all <p> tags)
+# ***************************************************************************************
+
+
+RTE.config.tx_wecdevo_content {
+	content.proc.overruleMode=0
+	scripture.proc.overruleMode=0
+	questions.proc.overruleMode=0
+	prayer.proc.overruleMode=0
+	application.proc.overruleMode=0
+}

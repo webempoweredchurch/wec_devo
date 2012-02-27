@@ -1,0 +1,464 @@
+<!-- WEC_DEVO FOR TJ TEMPLATE OVERVIEW
+*******************************************************************************
+	BASE TEMPLATES: (note you need to add ### at end of each one)
+		1) ###TEMPLATE_DEFAULT 		  -- has all content, journal
+		2) ###TEMPLATE_WEEKLY	 	  -- has all content, but no journal and weekly calendar
+		3) ###TEMPLATE_NOJOURNAL 	  -- has all content, but no journal
+		4) ###TEMPLATE_FORUM		  -- has all content, but no journal or feature bar
+		5) ###TEMPLATE_INFO 		  -- has only main content, and no journal
+		6) ###TEMPLATE_FREE  		  -- for free content
+		7) ###TEMPLATE_FREE_SCRIPTURE -- free content that only shows the scripture
+
+	TEMPLATE ID DESCRIPTIONS
+		The following are the template IDs that you can add to the template. You should only remove an element
+		if you do not want that element displayed at all. If it is a content element and is blank, then nothing
+		will be displayed.
+
+		###SECTION_INTERFACE	-- the horizontal interface that shows the sections (must have sections created)
+		###JOURNAL				-- the journal (must be turned on)
+		###SELECT_TOPIC 		-- the dropdown menu to select topics (must have topics created)
+
+		###MAIN_CONTENT 		-- the following are based on if the content is filled in the record field
+		###SCRIPTURE			-- (you can leave these in and if they are blank then they will be empty)
+		###QUESTIONS
+		###APPLICATION
+		###PRAYER
+		###END_CONTENT
+		###CONTENT_CLASS		-- the CSS class for content. This allows Large/Normal/Small font sizes
+
+		###HEADER				-- a header graphic or element (type=HEADER)
+		###COMMENTS				-- a comment system (type=COMMENT)
+		###DISCUSSION_PREVIEW 	-- a preview of discussion system (type=DISCUSSION_PREVIEW)
+
+		###DATE					-- the current date (ie. August 12, 2005)
+		###TODAY				-- a text link that says "today" that will take you to the current date
+		###DAILY_CALENDAR		-- a calendar showing each day of the current week (ie. < S M T W Th F S >)
+		###WEEK_CALENDAR		-- a weekly calendar allowing you to go to different weeks (ie. < Week of July 1-7,2005)
+
+  	  	###TEXTPAGING_ICONS		-- the icons for text paging (Full / 1-2-3 / Scrollbox)
+		###TEXTSIZE_ICONS		-- the icons for font sizing (Large / Normal / Small)
+		###AUDIO_LINK			-- graphic or text link (defined in Flexform) IF there is audio
+		###VIDEO_LINK			-- graphic or text link (defined in Flexform) IF there is video
+
+*******************************************************************************
+-->
+
+<!-- ###TEMPLATE_DEFAULT### begin
+===============================================================================
+	This is the default template for the Devo
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="7" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<!-- ###CONTENT### begin -->
+	    		<div class="tx-wecdevo-featureBar">
+		    		###AUDIO_LINK### ###DATE### ###TODAY### ###DAILY_CALENDAR### ###VIDEO_LINK###
+	    		</div>
+	    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+	    		###SCRIPTURE###
+	    		<font size="-2">Scripture taken from HOLY BIBLE, NEW INTERNATIONAL VERSION®. Copyright © 1973, 1978, 1984 by <a href="http://www.ibs.org">International Bible Society</a>. Used by permission of Zondervan. All rights reserved.</font>
+    			###NEXT_ARROW###
+	    		</div>
+    		<!-- ###CONTENT### end -->
+            <br>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          	  <!-- ###SHOW_ICONBOX### begin -->
+          	  <div style="width:240px;height:25px;padding:2px;">
+	          	  ###TEXTPAGING_ICONS###
+    	      	  ###TEXTSIZE_ICONS###
+          	  </div>
+          	  <!-- ###SHOW_ICONBOX### end -->
+          	  <div class="###CONTENT_CLASS###">
+        	      ###JOURNAL###
+            	  <div align="left">
+	            	  ###QUESTIONS###
+		              ###SELECT_TOPIC###
+		 			  ###COMMENTS###
+		 			  ###DISCUSSION_PREVIEW###
+        	      </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_DEFAULT### end-->
+
+
+<!-- ###TEMPLATE_WEEKLY### begin
+===============================================================================
+	This is the weekly template for the Devo
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<!-- ###CONTENT### begin -->
+	    		<div class="tx-wecdevo-featureBar">
+		    		###AUDIO_LINK### ###WEEK_CALENDAR###
+	    		</div>
+	    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+				###NEXT_ARROW###
+	    		</div>
+    		<!-- ###CONTENT### end -->
+            <br>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          	  <!-- ###SHOW_ICONBOX### begin -->
+          	  <div style="width:240px;height:30px;padding:4px;margin-left:40px;">
+	          	  ###TEXTPAGING_ICONS###
+    	      	  ###TEXTSIZE_ICONS###
+          	  </div>
+          	  <!-- ###SHOW_ICONBOX### end -->
+          	  <div class="###CONTENT_CLASS###">
+              <div align="left">
+	              ###SELECT_TOPIC###
+	 			  ###COMMENTS###
+	 			  ###DISCUSSION_PREVIEW###
+              </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_WEEKLY### end-->
+
+<!-- ###TEMPLATE_NOJOURNAL### begin
+===============================================================================
+	This is the no-journal template for the Devo
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<!-- ###CONTENT### begin -->
+	    		<div class="tx-wecdevo-featureBar">
+		    		###AUDIO_LINK### ###DATE### ###TODAY### ###DAILY_CALENDAR###
+	    		</div>
+	    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+				###NEXT_ARROW###
+	    		</div>
+    		<!-- ###CONTENT### end -->
+            <br>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          	  <!-- ###SHOW_ICONBOX### begin -->
+          	  <div style="width:240px;height:30px;padding:4px;margin-left:40px;">
+	          	  ###TEXTPAGING_ICONS###
+    	      	  ###TEXTSIZE_ICONS###
+          	  </div>
+          	  <!-- ###SHOW_ICONBOX### end -->
+          	  <div class="###CONTENT_CLASS###">
+              <div align="left">
+	              ###SELECT_TOPIC###
+			  	  ###COMMENTS###
+			  	  ###DISCUSSION_PREVIEW###
+              </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_NOJOURNAL### end-->
+
+<!-- ###TEMPLATE_FORUM### begin
+===============================================================================
+	This is the forum template for the Devo
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<!-- ###CONTENT### begin -->
+    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+				###NEXT_ARROW###
+    		</div>
+    		<!-- ###CONTENT### end -->
+            <br>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          	  <div class="tx-wecdevo-content">
+              <div align="left">
+	              ###SELECT_TOPIC###
+              </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_FORUM### end-->
+
+<!-- ###TEMPLATE_INFO### begin
+===============================================================================
+	This is the info template for the Devo (just main content)
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+				###NEXT_ARROW###
+	    	</div>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_INFO### end-->
+
+<!-- ###TEMPLATE_FREE### begin
+===============================================================================
+	This is the default template for the Devo
+
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<div class="tx-wecdevo-featureBar">
+	    		 ###DATE### ###TODAY### ###DAILY_CALENDAR###
+    		</div>
+    		<div class="###CONTENT_CLASS###">
+	    		###MAIN_CONTENT###
+				###NEXT_ARROW###
+	   		</div>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          	  <div class="###CONTENT_CLASS###">
+              <div align="left">
+	              ###SELECT_TOPIC###
+              </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_FREE### end-->
+
+<!-- ###TEMPLATE_FREE_SCRIPTURE### begin
+===============================================================================
+	This is the default template for the Devo
+-->
+<table width="802" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_left.gif') repeat-y top;">&nbsp;</td>
+    <td width="790" align="center" valign="bottom">###HEADER###</td>
+    <td width="6" rowspan="3" align="center" valign="top" style="background: url('fileadmin/tj/images/shadow_right.gif') repeat-y top;"></td>
+  </tr>
+  <tr>
+  	<td>
+		<table id="tx-wecdevo-globalnavTable" width="790" cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top">
+			<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+      		###SECTION_INTERFACE###
+      		</ul>
+      		</td></tr>
+      	</table>
+     </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td width="465" valign="top">
+    		<!-- ###CONTENT### begin -->
+	    		<div class="tx-wecdevo-featureBar">
+		    		 ###DATE### ###TODAY### ###DAILY_CALENDAR###
+	    		</div>
+	    		<div class="###CONTENT_CLASS###">
+	    		###SCRIPTURE###
+	    		<font size="-2">Scripture taken from HOLY BIBLE, NEW INTERNATIONAL VERSION®. <br>Copyright © 1973, 1978, 1984 by <a href="http://www.ibs.org">International Bible Society</a>. Used by permission of Zondervan. All rights reserved.</font>
+				###NEXT_ARROW###
+	    		</div>
+    		<!-- ###CONTENT### end -->
+            <br>
+          </td>
+          <td width="295" align="center" valign="top" bgcolor="#E4E4C9">
+          	  <div class="###CONTENT_CLASS###">
+              <div align="left">
+	              ###SELECT_TOPIC###
+              </div>
+              </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="19" colspan="3" align="center" valign="top">
+		<img src="fileadmin/tj/images/shadow_bottom.gif" width="802" height="17">
+	</td>
+  </tr>
+</table>
+<!-- ###TEMPLATE_FREE_SCRIPTURE### end-->

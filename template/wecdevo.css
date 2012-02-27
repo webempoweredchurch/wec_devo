@@ -1,0 +1,453 @@
+/* ------------------------- WEC DEVO CONTENT ELEMENTS ----------------------------------*/
+
+.tx-wecdevo-content, .tx-wecdevo-contentSmall, .tx-wecdevo-contentBig {
+	font-family: 	Tahoma, "Trebuchet MS", Arial, sans-serif;
+	font-size: 		90%;
+	line-height: 	155%;
+	word-spacing:   0.1em;
+	text-align:		left;
+}
+.tx-wecdevo-contentSmall {
+	font-size: 		75%;
+}
+.tx-wecdevo-contentBig {
+	font-size: 		110%;
+}
+
+.tx-wecdevo-contentBox {
+	font-family:	Tahoma, "Trebuchet MS", Arial, sans-serif;
+	padding:		0px;
+	margin:			0px;
+}
+.tx-wecdevo-contentBox td, 
+.tx-wecdevo-contentBox th {
+	padding: 0;
+	margin: 0;
+}
+.tx-wecdevo-contentBox table {
+	margin: 0;
+}
+.tx-wecdevo-contentBox ul,
+.tx-wecdevo-contentBox li
+{
+	margin-bottom: 4px;
+}
+
+.tx-wecdevo-leftCol {
+	font-family:	Tahoma, "Trebuchet MS", Arial, sans-serif;
+	background-color: #FFF;
+	padding:		8px !important;
+	margin:			0px;
+	width:			auto;
+	vertical-align:	top;
+}
+.tx-wecdevo-rightCol {
+	font-family:	Tahoma, "Trebuchet MS", Arial, sans-serif;
+	background-color: #EEE;
+	padding:		8px !important; 
+	margin:			0px;
+	width:			300px;
+	border:			2px solid #DDD;
+	vertical-align:	top;
+}
+.tx-wecdevo-rightCol-journal {
+	text-align:		center;
+}
+
+input.tx-wecdevo-button {
+	text-align: 	center;
+    text-decoration: none !important;
+	font-family: 	Arial, Verdana, sans-serif;
+	font-size: 		11px;
+	font-weight:	normal;
+	padding-left:  1px;
+	padding-right: 3px;
+	margin:  		3px;
+    height: 		20px;
+}
+
+input.tx-wecdevo-buttonHov {
+ 	text-decoration:    none !important;
+}
+
+/*---------------------------------- WEC DEVO TEXT ------------------------------------*/
+h4.tx-wecdevo-content,h4.tx-wecdevo-contentBig,h4.tx-wecdevo-contentSmall {	/* for the main title headers in content */
+	font-family: 	"Trebuchet MS", Tahoma, Arial, sans-serif;
+	font-size: 		120%;
+	font-weight: 	bold;
+	padding-bottom:	2px;
+	padding-top:	0.2em;
+	margin:		    0px;
+	letter-spacing: 0.1em;
+	line-height: 	normal;
+	border-bottom: 	1px solid #ccc;
+	text-transform: capitalize;
+	clear:			both;
+}
+
+h5.tx-wecdevo-content,h5.tx-wecdevo-contentBig,h5.tx-wecdevo-contentSmall {	/* for minor title headers in content */
+	font-family: 	"Trebuchet MS", Tahoma, Arial, sans-serif;
+	font-size:      105%;
+	font-weight: 	bold;
+	padding-top:	6px;
+	padding-bottom:	2px;
+	margin:			0px;
+	text-transform: capitalize;
+}
+
+/* ----------------------------- CALENDAR ELEMENTS ---------------------------------*/
+.tx-wecdevo-calendarTable {
+	position: 	absolute;
+	left:		140px;
+	top:		5px;
+	padding:	0px;
+	margin:		0px;
+	font-family:Tahoma, "Trebuchet MS", Verdana, sans-serif;
+	font-size: 	11px;
+	color:		#333333;
+	background-color:#FFFFFF;
+}
+.tx-wecdevo-calendarText, .tx-wecdevo-calendarTextLeft, .tx-wecdevo-calendarTextRight, .tx-wecdevo-calendarTextSelected {
+	width:				18px;
+	height:				18px;
+	text-align: 		center;
+	padding:			1px;
+	margin:				0px;
+}
+.tx-wecdevo-calendarTextLeft {
+	border-left-width: 		1px;
+	border-right-width: 	1px;
+	background-position: 	center;
+	text-align:				center;
+}
+.tx-wecdevo-calendarTextRight {
+	border-left-width: 		0px;
+	border-right-width: 	0px;
+	background-position: 	center;
+}
+.tx-wecdevo-calendarText a {
+	text-decoration: 		none !important;
+	text-align: 			center;
+}
+.tx-wecdevo-calendarText a:hover {
+	text-decoration: 	underline;
+	background-color: 	#999;
+	text-align: 		center;
+}
+.tx-wecdevo-calendarTextSelected {
+	background-color: 	#8C8C69;
+	color:				#FFFFF0;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    background-color: #AAAAAA;
+    border: 1px solid #666666;	
+}
+.tx-wecdevo-calendarTextSelected a, .tx-wecdevo-calendarTextSelected a:link, .tx-wecdevo-calendarTextSelected a:visited, .tx-wecdevo-calendarTextSelected a:active {
+	text-decoration: 	none !important;
+	color:				#FFFFF0;
+}
+.tx-wecdevo-calendarTextSelected a:hover {
+	text-decoration: none !important;
+}
+.tx-wecdevo-calendarArrow a { position:relative; display:inline; width:9px; height:9px; margin:0px; margin-top:0px;}
+.tx-wecdevo-calendarArrow a:hover { background-color: #802020; text-decoration: none !important;}
+
+/* This is the hover box for the daily calendar. Can be used elsewhere. */
+#dhtmltooltip {
+	position: 	absolute;
+    font-size: 	12px;
+    text-align: center;
+	width: 		60px;
+	border: 	1px solid #404040;
+	padding: 	1px;
+	background-color: #FFFFFF;
+	visibility: hidden;
+	z-index: 	1;
+}
+
+/* ------------------------------- MISC ELEMENTS ----------------------------------*/
+.tx-wecdevo-featureBar {
+	position:	relative;
+	height:		25px;
+	margin-bottom: 5px;
+	padding:	0px;
+}
+.tx-wecdevo-audioLink {
+	position: 	absolute;
+	left:		0px;
+	top:		2px;
+	margin:		0px;
+	padding:	0px;
+}
+.tx-wecdevo-videoLink {
+	position: 	absolute;
+	left:		30px;
+	top:		2px;
+	margin:		0px;
+	padding:	0px;
+}
+.tx-wecdevo-showDateText {
+	position: 	absolute;
+	left:		5px;
+	top:		6px;
+	margin:		0px;
+	padding:	0px;
+	width:		130px;
+	font-size:	13px;
+	letter-spacing: 0.75px;
+}
+.tx-wecdevo-showToday {
+	position: 	absolute;
+	left:		210px;
+	top:		24px;
+	font-family: "Trebuchet MS", Georgia, Arial, sans-serif;
+	font-size:  9px;
+	letter-spacing:0.75px;
+	margin:		0px;
+	padding:	0px;
+}
+.tx-wecdevo-showWeek,.tx-wecdevo-showWeekLink {
+	position: 	absolute;
+	left:		20px;
+	top:		24px;
+	font-family: "Trebuchet MS", Georgia, Arial, sans-serif;
+	font-size:  12px;
+	margin:		0px;
+	padding:	0px;
+	white-space: nowrap;
+}
+.tx-wecdevo-showWeekLink {
+	position: 	absolute;
+	left:		200px;
+	top:		18px;
+	font-size:  10px;
+}
+.tx-wecdevo-showMonth {
+	position: 	absolute;
+	left:		320px;
+	top:		9px;
+	margin:		0px;
+	padding:	0px;
+	white-space: nowrap;
+}
+.tx-wecdevo-journalName {
+	font-family: "Trebuchet MS", Georgia, Arial, sans-serif;
+	font-size: 	16px;
+	margin:		4px;
+	padding:	0px;
+    margin-top: 10px;
+	white-space: nowrap;
+	letter-spacing: 0.75px;
+}
+.tx-wecdevo-topic {
+	font-family:"Trebuchet MS", Georgia, Arial, sans-serif;
+	font-size: 	10px;
+}
+.tx-wecdevo-pagenum {
+	padding:	6px;
+	font-size:	12px;
+	margin:		0px auto;
+	text-align: center;
+}
+.tx-wecdevo-iconBoxHolder {
+	width:		220px;
+	height:		22px;
+	margin:		8px auto 0px auto;
+	
+}
+.tx-wecdevo-iconBox {
+	float:		left;
+	height:		21px;
+	padding:	0px;
+	margin:		0px 10px 4px 0;
+	border:		1px solid #888;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;	
+	background-color: #EEE;
+}
+.tx-wecdevo-iconBoxTitle {
+	float:		left;
+	line-height:2em;
+	height:		22px;
+	font-size:	9px;
+	padding-left:3px;
+	padding-right:3px;
+	background-color: #888;
+	color:		#FFF;
+	overflow:	visible;
+}
+.tx-wecdevo-iconBox span.icon, .tx-wecdevo-iconBox span.iconSelected {
+	float:		left;
+	margin:		2px;
+	padding:	2px;
+}
+.tx-wecdevo-iconBox span.iconSelected {
+	border:		1px solid #C44;
+	padding:	1px;
+}
+.tx-wecdevo-iconBox span.icon a {
+	padding: 1px;
+}
+.tx-wecdevo-iconBox span.icon a:hover {
+	border: 1px solid #00c;
+	padding: 0px;
+}
+
+.tx-wecdevo-iconBar {
+	position: absolute;
+	top: 5px;
+	left: 420px;
+}
+.tx-wecdevo-nextArrow {
+	width:		100%;
+	height:		25px;
+	padding:	10px;
+	text-align: center;
+	margin:		0px auto;
+}
+.tx-wecdevo-printWindow {
+	background-color:  #CCCCFF;
+}
+.tx-wecdevo-printBtn {
+	text-align: 	center;
+    text-decoration: none !important;
+	font-family: 	 "Trebuchet MS", Tahoma, Georgia, Verdana, Arial,Sans-serif;
+	font-size: 		12px;
+	font-weight:	normal;
+	padding-left:  1px;
+	padding-right: 3px;
+	margin:  		3px;
+    color: 			#303010;
+    height: 		20px;
+    background-color: #E0D0A0;
+}
+input.tx-wecdevo-printBtnHov {
+    background-color: #F0F080;
+ 	text-decoration:    none !important;
+}
+
+/*----------------- TABBED MENU -----------------------*/
+/*Credits: Dynamic Drive CSS Library -- http://www.dynamicdrive.com/style/ */
+
+.ddcolortabs {
+	margin: 2px 0px 0px 4px;
+	padding: 0;
+	background: transparent;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	padding-left: 5px;
+}
+.ddcolortabs ul {
+	font-weight: bold;
+	font-size: 100%;
+	font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.ddcolortabs li {
+	display:inline;
+	padding:0;
+}
+.ddcolortabs a,
+.ddcolortabs a span {
+	color: #222222;
+	background-color: #C0C0C0;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, #aaa),
+	    color-stop(0.50, #ddd)
+	);
+	background-image: -moz-linear-gradient(
+	    center bottom,
+	    #AAA 0%,
+	    #ddd 50%
+	);
+}
+.ddcolortabs a {
+	float:left;
+	margin:0 4px 0 0;
+	padding:2px 0 3px 3px;
+	letter-spacing: 1px;
+	text-decoration:none !important;	
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+.ddcolortabs a span {
+	float:	none;
+	display:block;
+	background-color: #BBB;
+	margin: 0px;
+	padding:4px 9px 2px 6px;
+	font-size: 13px;
+}
+.ddcolortabs a:hover,
+.ddcolortabs a:hover span  {
+	color: #C44;
+	background-color: #BB6;
+	text-decoration: none !important;
+}
+.ddcolortabs a:hover {
+	margin-top: 2px;
+	padding-bottom:1px;
+}
+.ddcolortabs a:hover span {
+	margin-top: 2px;
+	padding-bottom:0px;
+}
+.ddcolortabs #current a, .ddcolortabs #current span { 
+	background-color: #8CD;
+	color: #22C;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, #777),
+	    color-stop(0.50, #bbb)
+	);
+	background-image: -moz-linear-gradient(
+	    center bottom,
+	    #777 0%,
+	    #bbb 50%
+	);
+}
+.ddcolortabs #current a {
+	box-shadow: 0 0 7px #333333;
+    -moz-box-shadow: 0 0 7px #333333;
+    -webkit-box-shadow: 0 0 7px #333333;
+}
+.ddcolortabsline {
+	clear: both;
+	padding: 0;
+	width: 100%;
+	height: 6px;
+	line-height: 6px;
+	background-color: #777;
+    border-bottom: 2px solid #444444;
+    border-top: 2px solid #999999;	
+	margin: 2px 0 0;
+}
+
+#scrollbox {
+	overflow:auto;
+	padding:4px;
+	border:1px solid #000000;
+	margin:0px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+.hideCol {
+	display: none;
+}

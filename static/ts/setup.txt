@@ -1,0 +1,59 @@
+plugin.tx_wecdevo_pi1 {
+   general_stdWrap {
+      parseFunc < tt_content.text.20.parseFunc
+   }
+
+	templateFile 		= {$plugin.tx_wecdevo_pi1.templateFile}
+	cssFile 			= {$plugin.tx_wecdevo_pi1.cssFile}
+	pid_list 			= {$plugin.tx_wecdevo_pi1.pid_list}
+	nonSubscriberPID 	= {$plugin.tx_wecdevo_pi1.nonSubscriberPID}
+	sectionDataPID		= {$plugin.tx_wecdevo_pi1.sectionDataPID}
+	nextArrowImg		= {$plugin.tx_wecdevo_pi1.nextArrowImg}
+
+	downloadAudioIcon	= {$plugin.tx_wecdevo_pi1.downloadAudioIcon}
+	audioPath			= {$plugin.tx_wecdevo_pi1.audioPath}
+	audioPlayerURL		= {$plugin.tx_wecdevo_pi1.audioPlayerURL}
+	videoPath			= {$plugin.tx_wecdevo_pi1.videoPath}
+	videoPlayerURL		= {$plugin.tx_wecdevo_pi1.videoPlayerURL}
+
+	leftArrowImg		= {$plugin.tx_wecdevo_pi1.leftArrowImg}
+	rightArrowImg		= {$plugin.tx_wecdevo_pi1.rightArrowImg}
+	monthCalIconFile	= {$plugin.tx_wecdevo_pi1.monthCalIconFile}
+
+	iconPageFull		= {$plugin.tx_wecdevo_pi1.iconPageFull}
+	iconPage123			= {$plugin.tx_wecdevo_pi1.iconPage123}
+	iconPageScroll		= {$plugin.tx_wecdevo_pi1.iconPageScroll}
+	iconTextSizeSmall	= {$plugin.tx_wecdevo_pi1.iconTextSizeSmall}
+	iconTextSizeMed		= {$plugin.tx_wecdevo_pi1.iconTextSizeMed}
+	iconTextSizeBig		= {$plugin.tx_wecdevo_pi1.iconTextSizeBig}
+
+	scrollbox_height	= {$plugin.tx_wecdevo_pi1.scrollbox_height}
+	scrollbox_width		= {$plugin.tx_wecdevo_pi1.scrollbox_width}
+
+	RTEbackColor		= {$plugin.tx_wecdevo_pi1.RTEbackColor}
+	RTEwidth			= {$plugin.tx_wecdevo_pi1.RTEwidth}
+	RTEheight			= {$plugin.tx_wecdevo_pi1.RTEheight}
+	RTEfontSize			= {$plugin.tx_wecdevo_pi1.RTEfontSize}
+
+	forceTextPaging		= {$plugin.tx_wecdevo_pi1.forceTextPaging}
+	forceTextSize		= {$plugin.tx_wecdevo_pi1.forceTextSize}
+
+	titleTag			= {$plugin.tx_wecdevo_pi1.titleTag}
+	scriptureTag		= {$plugin.tx_wecdevo_pi1.scriptureTag}
+
+	startLinkRange		= -12 month
+	endLinkRange		= +3 month
+	
+	RTEenabled			= {$plugin.tx_wecdevo_pi1.RTEenabled}
+	
+	isLoaded			= yes
+}
+
+
+#*************************************************************
+# Default CSS styles for WEC DEVO:
+#*************************************************************
+plugin.tx_wecdevo_pi1._CSS_DEFAULT_STYLE (
+
+
+)

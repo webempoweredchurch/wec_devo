@@ -1,0 +1,72 @@
+plugin.tx_wecdevo_pi1 {
+# cat=plugin.tx_wecdevo_pi1/file/1; type=file[html,htm,tmpl,txt]; label= Template File: HTML template file for display of the Devo.
+  templateFile 		= EXT:wec_devo/template/wecdevo.tmpl
+# cat=plugin.tx_wecdevo_pi1/file/2; type=file[css]; label= Devo-Journal CSS File
+  cssFile 			= EXT:wec_devo/template/wecdevo.css
+
+#cat=plugin.tx_wecdevo_pi1/file/3; type=text; label= Starting Point (pid_list): The PID of the page (or comma separated list of PIDs) where your data is located.
+  pid_list =
+# cat=plugin.tx_wecdevo_pi1/file/4; type=int+; label= Page ID which non-subscribers see when trying to access subscriber content
+  nonSubscriberPID 	=
+# cat=plugin.tx_wecdevo_pi1/file/5; type=int+; label= Page ID for where section data is. Only needed if duplicating section data.
+  sectionDataPID 	=
+#cat=plugin.tx_wecdevo_pi1/file/6; type=file[gif,jpg,png]; label= Next Arrow Image
+  nextArrowImg 		= EXT:wec_devo/res/next_arrow.gif
+#cat=plugin.tx_wecdevo_pi1/file/7a; type=string; label= Path For Audio Files
+  audioPath		  	= fileadmin/wecdevo/audio/
+#cat=plugin.tx_wecdevo_pi1/file/7b; type=string; label= Path and Location Of Audio Player
+  audioPlayerURL 	= fileadmin/wecdevo/audio/mp3player.swf
+#cat=plugin.tx_wecdevo_pi1/file/7c; type=file[jpg,gif,png]; label= Download Audio Icon file
+  downloadAudioIcon =
+#cat=plugin.tx_wecdevo_pi1/file/8a; type=string; label= Path For Video Files
+  videoPath		  	= fileadmin/wecdevo/video/
+#cat=plugin.tx_wecdevo_pi1/file/8b; type=string; label= Path and Location Of Video Player
+  videoPlayerURL 	= fileadmin/wecdevo/video/video.swf
+
+#cat=plugin.tx_wecdevo_pi1/file/8e; type=file[gif,jpg,png]; label= Calendar Left Arrow
+  leftArrowImg 		= EXT:wec_devo/res/leftarrow.gif
+#cat=plugin.tx_wecdevo_pi1/file/8f; type=file[gif,jpg,png]; label= Calendar Right Arrow
+  rightArrowImg 	= EXT:wec_devo/res/rightarrow.gif
+#cat=plugin.tx_wecdevo_pi1/file/8a; type=string; label= Monthly Calendar Graphic Icon File
+  monthCalIconFile	= EXT:wec_devo/res/icons/icon-cal.gif
+
+#cat=plugin.tx_wecdevo_pi1/file/99a; type=file[gif,jpg,png]; label= Icon for Full Page
+  iconPageFull		= EXT:wec_devo/res/icons/icon-pagefull.gif
+#cat=plugin.tx_wecdevo_pi1/file/99b; type=file[gif,jpg,png]; label= Icon for Paging
+  iconPage123		= EXT:wec_devo/res/icons/icon-page123.gif
+#cat=plugin.tx_wecdevo_pi1/file/99c; type=file[gif,jpg,png]; label= Icon for ScrollBox Paging
+  iconPageScroll	= EXT:wec_devo/res/icons/icon-pagescroll.gif
+#cat=plugin.tx_wecdevo_pi1/file/99d; type=file[gif,jpg,png]; label= Icon for Small Text Size
+  iconTextSizeSmall	= EXT:wec_devo/res/icons/icon-textsmall.gif
+#cat=plugin.tx_wecdevo_pi1/file/99e; type=file[gif,jpg,png]; label= Icon for Normal Text Size
+  iconTextSizeMed	= EXT:wec_devo/res/icons/icon-textmed.gif
+#cat=plugin.tx_wecdevo_pi1/file/99f; type=file[gif,jpg,png]; label= Icon for Large Text Size
+  iconTextSizeBig	= EXT:wec_devo/res/icons/icon-textbig.gif
+
+#cat=plugin.tx_wecdevo_pi1/dims/4a; type=int+; label= Width of Scroll Box (for ScrollBox Paging)
+  scrollbox_width	= 410
+#cat=plugin.tx_wecdevo_pi1/dims/4b; type=int+; label= Height of Scroll Box (for ScrollBox Paging)
+  scrollbox_height	=
+
+#cat=plugin.tx_wecdevo_pi1/etc/2a; type=string; label= RTE Background Color
+  RTEbackColor 		= #f8f8f8
+#cat=plugin.tx_wecdevo_pi1/etc/2b; type=string; label= RTE Width (in px)
+  RTEwidth 			= 300px
+#cat=plugin.tx_wecdevo_pi1/etc/2c; type=string; label= RTE Height (in px)
+  RTEheight			= 310px
+#cat=plugin.tx_wecdevo_pi1/etc/2d; type=string; label= RTE Font Size (in PT, ie. 9pt)
+  RTEfontSize		= 9pt
+
+#cat=plugin.tx_wecdevo_pi1/etc/1a; type=string; label= Force Text Paging (1=Full screen, 2=Paged, 3=Scrollbox)
+  forceTextPaging	=
+#cat=plugin.tx_wecdevo_pi1/etc/1b; type=string; label= Force Text Size (1=small, 2=medium, 3=large)
+  forceTextSize		=
+
+#cat=plugin.tx_wecdevo_pi1/etc/4a; type=string; label= HTML Tag for Title
+  titleTag	= h4
+#cat=plugin.tx_wecdevo_pi1/etc/4b; type=string; label= HTML Tag for Scripture References
+  scriptureTag = h5
+
+#cat=plugin.tx_wecdevo_pi1/etc/5a; type=options[rtehtmlarea,tinymce,bg_htmlarea,none]; label= Which RTE to use for FrontEnd Posts?
+  RTEenabled		= bg_htmlarea
+}

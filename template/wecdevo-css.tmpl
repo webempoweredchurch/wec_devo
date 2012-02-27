@@ -1,0 +1,175 @@
+<!-- WEC_DEVO TEMPLATE OVERVIEW
+*******************************************************************************
+	BASE TEMPLATES:
+		1) ###TEMPLATE_DEFAULT 	 -- has all content, journal
+		2) ###TEMPLATE_NOJOURNAL -- has all content, but no journal
+		3) ###TEMPLATE_INFO		 -- has only main content, and no journal
+
+	TEMPLATE ID DESCRIPTIONS
+		The following are the template IDs that you can add to the template. You should only remove an element
+		if you do not want that element displayed at all. If it is a content element and is blank, then nothing
+		will be displayed.
+
+		###SECTION_INTERFACE	-- the horizontal interface that shows the sections (must have sections created)
+		###JOURNAL				-- the journal (must be turned on)
+		###SELECT_TOPIC 		-- the dropdown menu to select topics (must have topics created)
+
+		###MAIN_CONTENT 		-- the following are based on if the content is filled in the record field
+		###SCRIPTURE			-- (you can leave these in and if they are blank then they will be empty)
+		###QUESTIONS
+		###APPLICATION
+		###PRAYER
+		###END_CONTENT
+		###CONTENT_CLASS		-- the CSS class for content. This allows Large/Normal/Small font sizes
+
+		###HEADER				-- a header graphic or element (type=HEADER)
+		###COMMENTS				-- a comment system (type=COMMENT)
+		###DISCUSSION_PREVIEW 	-- a preview of discussion system (type=DISCUSSION_PREVIEW)
+
+		###DATE					-- the current date (ie. August 12, 2005)
+		###TODAY				-- a text link that says "today" that will take you to the current date
+		###DAILY_CALENDAR		-- a calendar showing each day of the current week (ie. < S M T W Th F S >)
+		###WEEK_CALENDAR		-- a weekly calendar allowing you to go to different weeks (ie. < Week of July 1-7,2005)
+
+   	  	###TEXTPAGING_ICONS		-- the icons for text paging (Full / 1-2-3 / Scrollbox)
+	    ###TEXTSIZE_ICONS		-- the icons for font sizing (Large / Normal / Small)
+		###AUDIO_LINK			-- graphic or text link (defined in Flexform) IF there is audio
+
+-->
+
+<!-- ###TEMPLATE_DEFAULT### begin
+===============================================================================
+	This is the default template for the Devo
+-->
+<div class="tx-wecdevo-contentBox">
+  <div>
+     ###HEADER###
+  </div>
+  <div>
+  	<div id="tx-wecdevo-globalnavTable">
+		<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+     		###SECTION_INTERFACE###
+   		</ul>
+   	</div>
+  </div>
+  <div style="margin:0px;padding:0px;">
+	<div class="tx-wecdevo-leftCol" style="float:left;height:100%;padding:4px;">
+   		<div class="tx-wecdevo-featureBar">
+    		###AUDIO_LINK### ###DATE### ###TODAY### ###DAILY_CALENDAR###
+   		</div>
+   		<div class="###CONTENT_CLASS###">
+    		###MAIN_CONTENT###
+    		###SCRIPTURE###
+    		###APPLICATION###
+    		###PRAYER###
+    		###END_CONTENT###
+    		###NEXT_ARROW###
+   		</div>
+     </div>
+     <div class="tx-wecdevo-rightCol" style="float:left;height:100%;padding-bottom:40px;">
+        <!-- ###SHOW_ICONBOX### begin -->
+	 	<div style="margin-left:20px;height:40px;">
+			###TEXTPAGING_ICONS###
+		    ###TEXTSIZE_ICONS###
+      	</div>
+      	<!-- ###SHOW_ICONBOX### end -->
+	    <div class="###CONTENT_CLASS###">
+		    ###JOURNAL###
+		    <div align="left">
+		    	###QUESTIONS###
+			    ###SELECT_TOPIC###
+			 	###COMMENTS###
+            </div>
+        </div>
+  </div>
+</div>
+
+<!-- ###TEMPLATE_DEFAULT### end-->
+
+<!-- ###TEMPLATE_NOJOURNAL### begin
+===============================================================================
+	This is the no-journal template for the Devo
+-->
+<div class="tx-wecdevo-contentBox">
+  <div>
+     ###HEADER###
+  </div>
+  <div>
+  	<div id="tx-wecdevo-globalnavTable">
+		<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+     		###SECTION_INTERFACE###
+   		</ul>
+   	</div>
+  </div>
+  <div style="margin:0px;padding:0px;">
+	<div class="tx-wecdevo-leftCol" style="float:left;height:100%;padding:4px;">
+   		<div class="tx-wecdevo-featureBar">
+    		###AUDIO_LINK### ###DATE### ###TODAY### ###DAILY_CALENDAR###
+   		</div>
+   		<div class="###CONTENT_CLASS###">
+    		###MAIN_CONTENT###
+    		###SCRIPTURE###
+    		###APPLICATION###
+    		###PRAYER###
+    		###END_CONTENT###
+    		###NEXT_ARROW###
+   		</div>
+     </div>
+     <div class="tx-wecdevo-rightCol" style="float:left;height:100%;padding-bottom:40px;">
+        <!-- ###SHOW_ICONBOX### begin -->
+	 	<div style="margin-left:20px;height:40px;">
+			###TEXTPAGING_ICONS###
+		    ###TEXTSIZE_ICONS###
+      	</div>
+      	<!-- ###SHOW_ICONBOX### end -->
+	    <div class="###CONTENT_CLASS###">
+		    <div align="left">
+		    	###QUESTIONS###
+			    ###SELECT_TOPIC###
+			 	###COMMENTS###
+            </div>
+        </div>
+  </div>
+</div>
+<!-- ###TEMPLATE_NOJOURNAL### end-->
+
+<!-- ###TEMPLATE_INFO### begin
+===============================================================================
+	This is the info template for the Devo (just main content)
+-->
+<div class="tx-wecdevo-contentBox">
+  <div>
+     ###HEADER###
+  </div>
+  <div>
+  	<div id="tx-wecdevo-globalnavTable">
+		<ul id="tx-wecdevo-globalnav">
+			<li><span class="bar"></span></li>
+			<li><span class="bar2"></span></li>
+     		###SECTION_INTERFACE###
+   		</ul>
+   	</div>
+  </div>
+  <div style="margin:0px;padding:0px;">
+	<div class="tx-wecdevo-leftCol" style="float:left;height:100%;padding:4px;">
+   		<div class="tx-wecdevo-featureBar">
+   		</div>
+   		<div class="###CONTENT_CLASS###">
+    		###MAIN_CONTENT###
+    		###NEXT_ARROW###
+   		</div>
+     </div>
+     <div class="tx-wecdevo-rightCol" style="float:left;height:100%;padding-bottom:40px;">
+        <!-- ###SHOW_ICONBOX### begin -->
+	 	<div style="margin-left:20px;height:40px;">
+			###TEXTPAGING_ICONS###
+		    ###TEXTSIZE_ICONS###
+      	</div>
+      	<!-- ###SHOW_ICONBOX### end -->
+  </div>
+</div>
+<!-- ###TEMPLATE_INFO### end-->
